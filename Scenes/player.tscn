@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://cw2vswei52j03"]
+
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_kduul"]
+[ext_resource type="Texture2D" uid="uid://be1ysxbagya50" path="res://Tileset/Left.png" id="2_xtn03"]
+[ext_resource type="AudioStream" uid="uid://k6qc0c2bjogm" path="res://Assets/Jump.mp3" id="3_v5qnw"]
+[ext_resource type="Texture2D" uid="uid://cqiqngv5le1y7" path="res://Assets/light.webp" id="4_pfm8d"]
+[ext_resource type="AudioStream" uid="uid://dke3blgvx0pw7" path="res://Assets/Death.mp3" id="5_kqfle"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5w48o"]
+atlas = ExtResource("2_xtn03")
+region = Rect2(323, 238, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usdw6"]
+atlas = ExtResource("2_xtn03")
+region = Rect2(238, 238, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rl7f"]
+atlas = ExtResource("2_xtn03")
+region = Rect2(306, 238, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c2g7b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5w48o")
+}],
+"loop": true,
+"name": &"Idling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usdw6")
+}],
+"loop": true,
+"name": &"Jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rl7f")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcsea"]
+size = Vector2(14, 12)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_kduul")
+
+[node name="Sprite Sheets" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_c2g7b")
+animation = &"Idling"
+
+[node name="Light Area" type="PointLight2D" parent="."]
+energy = 2.44
+texture = ExtResource("4_pfm8d")
+
+[node name="Collision Box" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_tcsea")
+
+[node name="FOV" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+editor_draw_screen = false
+
+[node name="Jumping Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_v5qnw")
+volume_db = -15.0
+
+[node name="Death Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_kqfle")
