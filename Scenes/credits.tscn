@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://epp0chigdsdx"]
+[gd_scene load_steps=4 format=3 uid="uid://epp0chigdsdx"]
 
 [ext_resource type="Script" path="res://Scenes/credits.gd" id="1_ds21i"]
 [ext_resource type="Texture2D" uid="uid://bkm4jm2cs7p1b" path="res://Assets/menu_overlay.png" id="1_gp2jy"]
+[ext_resource type="FontFile" uid="uid://df4nsqscanrb2" path="res://Assets/upheavtt.ttf" id="3_bopha"]
 
 [node name="Credits" type="Node"]
 script = ExtResource("1_ds21i")
@@ -17,6 +18,7 @@ offset_left = 473.0
 offset_top = 272.0
 offset_right = 1576.0
 offset_bottom = 961.0
+theme_override_fonts/normal_font = ExtResource("3_bopha")
 theme_override_font_sizes/normal_font_size = 90
 text = "Jeu Codé Par: @GaelHF
 Pack de Tuiles : Kenney.nl
@@ -27,6 +29,7 @@ offset_left = 743.0
 offset_top = 795.0
 offset_right = 1208.0
 offset_bottom = 893.0
+theme_override_fonts/font = ExtResource("3_bopha")
 theme_override_font_sizes/font_size = 65
 text = "RETOUR"
 

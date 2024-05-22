@@ -1,13 +1,17 @@
 extends Node
 
+
 @export var LevelScene : PackedScene
+@export var CreditScene : PackedScene	
+ 
 
 func _on_play_pressed():
-	get_tree().change_scene_to_packed(LevelScene)
+	SceneTransition.transite_from_packed_scene(LevelScene)
+
 
 
 func _on_credits_pressed():
-	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
+	SceneTransition.transite_from_packed_scene(CreditScene)
 
 
 func _on_quit_pressed():

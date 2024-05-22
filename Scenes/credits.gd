@@ -2,4 +2,4 @@ extends Node
 
 
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	SceneTransition.transite_from_file("res://Scenes/menu.tscn")

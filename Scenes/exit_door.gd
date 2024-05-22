@@ -4,5 +4,6 @@ extends Area2D
 
 
 func _on_body_entered(body):
-	pass
-	#get_tree().change_scene_to_packed(Nextlevel)
+	SceneTransition.transite_from_packed_scene(Nextlevel)
+	if(body.has_method("reload")):
+		body.reload()

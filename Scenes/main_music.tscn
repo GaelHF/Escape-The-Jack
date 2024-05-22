@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkyk0w5rofv3x"]
+
+[ext_resource type="AudioStream" uid="uid://8kdls7b24db1" path="res://Music/Ray Charles - Hit The Road Jack (Official Lyrics Video).mp3" id="1_fsyqd"]
+
+[node name="Main Music" type="Node"]
+
+[node name="Theme Song" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_fsyqd")
+autoplay = true

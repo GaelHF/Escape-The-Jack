@@ -46,7 +46,7 @@ func _physics_process(delta):
 		
 	move_and_slide()
 	var isLeft = velocity.x < 0
-	rect.flip_h = not isLeft
+	rect.flip_h = isLeft
 
 
 func reload() -> void:
