@@ -1535,7 +1535,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="Exit Door" parent="." instance=ExtResource("6_r85tq")]
 position = Vector2(111, 241)
-collision_mask = 7
 Nextlevel = ExtResource("6_jfk5w")
 
 [connection signal="body_entered" from="Dead Zone" to="Dead Zone" method="_on_body_entered"]
