@@ -5,5 +5,5 @@ extends Area2D
 
 func _on_body_entered(body):
 	SceneTransition.transite_from_packed_scene(Nextlevel)
-	if(body.has_method("reload")):
-		body.reload()
+	if(body.has_method("spawn")):
+		body.spawn()

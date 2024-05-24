@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -250.0
+const push_force = 80.0
 
 #Nodes
 @onready var rect = $"Sprite Sheets"
@@ -36,7 +37,7 @@ func _physics_process(delta):
 	
 	#Reload Scene
 	if Input.is_action_just_pressed("Reload"):
-		reload()
+		die()
 	
 	var direction = Input.get_axis("left", "right")
 	if direction:
@@ -45,15 +46,17 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, 12)
 		
 	move_and_slide()
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 	var isLeft = velocity.x < 0
 	rect.flip_h = isLeft
 
-
-func reload() -> void:
+func spawn() -> void:
 	var pos = Vector2(spawn_point.position)
 	self.position = pos
 
 func die() -> void:
-	if not death_sound.playing:
-		death_sound.play()
-	reload()
+	get_tree().reload_current_scene()
+	spawn()

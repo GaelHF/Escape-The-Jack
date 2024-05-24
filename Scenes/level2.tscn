@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cu0qggjcs6c35"]
+[gd_scene load_steps=10 format=3 uid="uid://cu0qggjcs6c35"]
 
 [ext_resource type="Script" path="res://Scenes/fall.gd" id="1_qjaah"]
 [ext_resource type="Texture2D" uid="uid://w6hu4vvoen73" path="res://Tileset/Black.png" id="2_6bta5"]
 [ext_resource type="PackedScene" uid="uid://bwgssm4curhpu" path="res://Scenes/trap.tscn" id="4_emifk"]
 [ext_resource type="PackedScene" uid="uid://cw2vswei52j03" path="res://Scenes/player.tscn" id="4_hqce3"]
+[ext_resource type="PackedScene" uid="uid://vv48pld3hi8i" path="res://Scenes/level3.tscn" id="6_jfk5w"]
 [ext_resource type="PackedScene" uid="uid://oam2ucwo15r4" path="res://Scenes/exit_door.tscn" id="6_r85tq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipxc4"]
@@ -1482,6 +1483,7 @@ sources/0 = SubResource("TileSetAtlasSource_xhgb2")
 
 [node name="Dead Zone" type="Area2D" parent="."]
 position = Vector2(0, 429)
+collision_mask = 7
 script = ExtResource("1_qjaah")
 
 [node name="Zone" type="CollisionShape2D" parent="Dead Zone"]
@@ -1533,6 +1535,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="Exit Door" parent="." instance=ExtResource("6_r85tq")]
 position = Vector2(111, 241)
-Nextlevel = null
+collision_mask = 7
+Nextlevel = ExtResource("6_jfk5w")
 
 [connection signal="body_entered" from="Dead Zone" to="Dead Zone" method="_on_body_entered"]

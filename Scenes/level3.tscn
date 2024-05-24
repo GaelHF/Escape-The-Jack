@@ -1,17 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://28o36nqvqkh5"]
+[gd_scene load_steps=9 format=3 uid="uid://vv48pld3hi8i"]
 
-[ext_resource type="Script" path="res://Scenes/fall.gd" id="1_mthfn"]
-[ext_resource type="Texture2D" uid="uid://w6hu4vvoen73" path="res://Tileset/Black.png" id="1_nh4p6"]
-[ext_resource type="PackedScene" uid="uid://cw2vswei52j03" path="res://Scenes/player.tscn" id="2_bj6jl"]
-[ext_resource type="PackedScene" uid="uid://bwgssm4curhpu" path="res://Scenes/trap.tscn" id="3_lo72c"]
-[ext_resource type="PackedScene" uid="uid://cu0qggjcs6c35" path="res://Scenes/level2.tscn" id="4_p3e5l"]
-[ext_resource type="PackedScene" uid="uid://oam2ucwo15r4" path="res://Scenes/exit_door.tscn" id="7_ico46"]
+[ext_resource type="Script" path="res://Scenes/fall.gd" id="1_1pr6w"]
+[ext_resource type="Texture2D" uid="uid://w6hu4vvoen73" path="res://Tileset/Black.png" id="2_sacc2"]
+[ext_resource type="PackedScene" uid="uid://cw2vswei52j03" path="res://Scenes/player.tscn" id="3_a251g"]
+[ext_resource type="PackedScene" uid="uid://cjje2npjhbh15" path="res://Scenes/box.tscn" id="4_nif55"]
+[ext_resource type="PackedScene" uid="uid://oam2ucwo15r4" path="res://Scenes/exit_door.tscn" id="5_5woty"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipxc4"]
-size = Vector2(2041, 20)
+size = Vector2(2476, 20)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xhgb2"]
-texture = ExtResource("1_nh4p6")
+texture = ExtResource("2_sacc2")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -33,7 +32,7 @@ separation = Vector2i(1, 1)
 5:0/0 = 0
 5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:0/0/physics_layer_0/angular_velocity = 0.0
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.875, -10.25, 7.875, -9.75, 8, -0.25, 8, 2.875, -8, 3)
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.625, 1.875, -2.875, -8, 2.5, -9.125, 3.25, 2.25, 8, 8, 5.375, 8, 0.625, 4.25, -1, 4.375, -6, 8, -8, 8)
 6:0/0 = 0
 6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:0/0/physics_layer_0/angular_velocity = 0.0
@@ -735,7 +734,7 @@ separation = Vector2i(1, 1)
 2:9/0 = 0
 2:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:9/0/physics_layer_0/angular_velocity = 0.0
-2:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, 6.01041, 8, 5.48008, 3.18198, -2.65165, -4.41942, -8, -3.35876)
 1:9/0 = 0
 1:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:9/0/physics_layer_0/angular_velocity = 0.0
@@ -743,7 +742,7 @@ separation = Vector2i(1, 1)
 0:9/0 = 0
 0:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:9/0/physics_layer_0/angular_velocity = 0.0
-0:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2.5, -9.5, -9, 2.5, -9.125, 8, -8, 9.25, -3, 4.875, -3.25, -0.5, -2, -2.5, 1.75, -6, 8, -8, 8)
 0:10/0 = 0
 0:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:10/0/physics_layer_0/angular_velocity = 0.0
@@ -1479,58 +1478,44 @@ separation = Vector2i(1, 1)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xhgb2")
 
-[node name="Level 1" type="Node2D"]
+[node name="Level 3" type="Node2D"]
 
 [node name="Dead Zone" type="Area2D" parent="."]
 position = Vector2(0, 429)
 collision_mask = 7
-script = ExtResource("1_mthfn")
+script = ExtResource("1_1pr6w")
 
 [node name="Zone" type="CollisionShape2D" parent="Dead Zone"]
-position = Vector2(1020.5, 0)
+position = Vector2(807, 40)
 shape = SubResource("RectangleShape2D_ipxc4")
 
 [node name="Map" type="TileMap" parent="."]
 texture_filter = 1
-position = Vector2(79, 11)
+position = Vector2(79, 10)
 tile_set = SubResource("TileSet_qqnb2")
 format = 2
-layer_0/tile_data = PackedInt32Array(655370, 983040, 5, 655371, 1048576, 5, 655372, 1048576, 5, 655373, 1048576, 5, 720910, 1114112, 6, 786446, 1114112, 6, 851982, 1114112, 6, 917518, 1114112, 6, 983054, 1114112, 6, 1048590, 1114112, 6, 1114126, 1114112, 6, 1179662, 1114112, 6, 1245198, 1114112, 6, 1310734, 1114112, 7, 1310733, 1048576, 7, 1310732, 1048576, 7, 1310731, 1048576, 7, 1310730, 983040, 7, 1245194, 983040, 6, 1179658, 983040, 6, 1114122, 983040, 6, 1048586, 983040, 6, 983050, 983040, 6, 917514, 983040, 6, 851978, 983040, 6, 786442, 983040, 6, 720906, 983040, 6, 1245196, 1048576, 6, 1245195, 1048576, 6, 1245197, 1048576, 6, 1179661, 1048576, 6, 1179660, 1048576, 6, 1179659, 1048576, 6, 1114123, 1048576, 6, 1048587, 1048576, 6, 983051, 1048576, 6, 917515, 1048576, 6, 851979, 1048576, 6, 786443, 1048576, 6, 720907, 1048576, 6, 720908, 1048576, 6, 786444, 1048576, 6, 851980, 1048576, 6, 917516, 1048576, 6, 983052, 1048576, 6, 1048588, 1048576, 6, 1114124, 1048576, 6, 1114125, 1048576, 6, 1048589, 1048576, 6, 983053, 1048576, 6, 917517, 1048576, 6, 851981, 1048576, 6, 786445, 1048576, 6, 720909, 1048576, 6, 655374, 1114112, 5, 262159, 655360, 15, 262160, 720896, 16, 262161, 720896, 16, 196621, 655360, 16, 196622, 720896, 16, 196623, 786432, 13, 262162, 720896, 16, 262163, 720896, 16, 262164, 720896, 16, 327698, 196608, 0, 393234, 196608, 1, 458770, 196608, 1, 524306, 327680, 0, 589841, 262144, 1, 589843, 393216, 1, 589842, 851968, 3, 655377, 262144, 2, 655378, 327680, 2, 655379, 393216, 2, 655382, 1114112, 17, 720918, 1114112, 18, 786454, 1114112, 19, 655383, 1179648, 17, 720919, 1179648, 18, 786455, 1179648, 19, 655384, 1245184, 17, 720920, 1245184, 18, 786456, 1245184, 19, 589849, 1114112, 17, 655385, 1114112, 18, 720921, 1114112, 19, 589850, 1179648, 17, 655386, 1179648, 18, 720922, 1179648, 19, 589851, 1245184, 17, 655387, 1245184, 18, 720923, 1245184, 19, 458782, 1114112, 17, 524318, 1114112, 18, 589854, 1114112, 19, 458783, 1179648, 17, 524319, 1179648, 18, 589855, 1179648, 19, 458784, 1245184, 17, 524320, 1245184, 18, 589856, 1245184, 19, 786460, 917504, 19, 786461, 1048576, 19, 720925, 1048576, 17, 720924, 917504, 17, 327712, 917504, 0, 393248, 917504, 1, 393247, 1048576, 1, 393246, 786432, 3, 327706, 655360, 16, 327707, 720896, 16, 327708, 786432, 16, 262166, 720896, 16, 262167, 720896, 16, 262168, 786432, 16, 21, 0, 9, 65557, 0, 10, 23, 131072, 9, 65559, 131072, 10, 131093, 0, 10, 196629, 0, 11, 196631, 131072, 11, 131095, 131072, 10, 262165, 720896, 16, 22, 65536, 9, -65515, 0, 7, -65514, 65536, 7, -65513, 131072, 7, 65554, 655360, 12, 65555, 720896, 12, 65556, 786432, 12, 25, 983040, 8, 26, 1048576, 8, 27, 1114112, 7, -65509, 983040, 5, -65508, 1048576, 8, -65507, 1048576, 8, -65506, 1048576, 8, -65505, 1048576, 8, -65504, 1114112, 8, -196580, 393216, 9, -131044, 393216, 10, 65549, 393216, 9, 131085, 393216, 10, 34, 327680, 8, 35, 262144, 8, 36, 196608, 8, 65570, 655360, 8, 65571, 720896, 8, 65572, 786432, 8, 65575, 0, 8, 65576, 65536, 8, 65577, 65536, 8, 65578, 65536, 8, 65579, 131072, 8, 43, 131072, 7, 39, 0, 7, 40, 65536, 7, 41, 65536, 7, 42, 65536, 7, 65581, 262144, 5, 65582, 327680, 5, 65583, 327680, 5, 65584, 393216, 5)
-
-[node name="Exit Door" parent="." instance=ExtResource("7_ico46")]
-position = Vector2(832, 18)
-collision_mask = 7
-Nextlevel = ExtResource("4_p3e5l")
+layer_0/tile_data = PackedInt32Array(1703934, 458752, 10, 1703935, 524288, 10, 1638400, 589824, 10, 1638399, 524288, 9, 1572863, 524288, 9, 1507327, 524288, 9, 1507326, 458752, 9, 1441792, 589824, 9, 1376258, 983040, 8, 1376259, 1114112, 8, 1310726, 983040, 8, 1310727, 1114112, 8, 1310730, 655360, 4, 1310731, 655360, 4, 1310732, 655360, 4, 1310733, 655360, 4, 1245197, 655360, 4, 1245198, 655360, 4, 1245199, 655360, 4, 1245200, 655360, 4, 1179664, 655360, 4, 1048590, 655360, 4, 1048589, 655360, 4, 1245191, 1114112, 1, 1245190, 1048576, 1, 1245187, 917504, 0, 1310723, 917504, 1, 1310722, 851968, 1, 983050, 1114112, 5, 1048586, 1114112, 7, 1048585, 983040, 7, 983049, 983040, 5, 720907, 983040, 12, 720908, 1048576, 12, 720909, 1114112, 12, 655365, 983040, 12, 655366, 1048576, 12, 655367, 1114112, 12, 786444, 1245184, 0, 851980, 1245184, 1, 917508, 262144, 1, 983044, 262144, 2, 851973, 327680, 0, 917509, 327680, 1, 983045, 327680, 2, 917510, 393216, 1, 983046, 393216, 2, 786437, 196608, 1, 720901, 196608, 0, 589830, 851968, 2, 589829, 917504, 2, 851977, 262144, 9, 917513, 262144, 10, 1048577, 1114112, 13, 1114113, 1114112, 14, 1179649, 1114112, 15, 1048576, 1048576, 13, 1179648, 1048576, 15, 1114111, 1048576, 13, 1245183, 1048576, 15, 1114110, 1048576, 13, 1245182, 1048576, 15, 1114109, 1048576, 13, 1245181, 1048576, 15, 1114108, 1048576, 13, 1245180, 1048576, 15, 1245179, 983040, 15, 1179642, 1048576, 15, 1179643, 1245184, 15, 1179641, 1048576, 15, 1179640, 983040, 15, 1114104, 983040, 14, 1048568, 983040, 14, 1048570, 1114112, 14, 1114106, 1245184, 13, 1114107, 1048576, 13, 1179646, 1048576, 14, 1048569, 1048576, 14, 917498, 1114112, 13, 917496, 983040, 13, 983032, 983040, 14, 983034, 1114112, 14, 917497, 1048576, 13)
 
 [node name="Spawn Point" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(274, 136)
+position = Vector2(70, 349)
 gizmo_extents = 18.0
 
-[node name="Player" parent="." instance=ExtResource("2_bj6jl")]
+[node name="Player" parent="." instance=ExtResource("3_a251g")]
+collision_layer = 2
+collision_mask = 7
+
+[node name="Boxes" type="Node2D" parent="."]
+
+[node name="Box" parent="Boxes" instance=ExtResource("4_nif55")]
+position = Vector2(87, 256)
 
 [node name="Traps" type="Node2D" parent="."]
 
-[node name="Trap" parent="Traps" instance=ExtResource("3_lo72c")]
-position = Vector2(535, 183)
-
-[node name="Trap2" parent="Traps" instance=ExtResource("3_lo72c")]
-position = Vector2(551, 183)
-
-[node name="Trap3" parent="Traps" instance=ExtResource("3_lo72c")]
-position = Vector2(343, 71)
-
-[node name="Trap4" parent="Traps" instance=ExtResource("3_lo72c")]
-position = Vector2(439, 71)
-
-[node name="Trap5" parent="Traps" instance=ExtResource("3_lo72c")]
-position = Vector2(503, 8)
-
-[node name="Trap6" parent="Traps" instance=ExtResource("3_lo72c")]
-position = Vector2(610, 3)
-rotation = 1.5708
-
 [node name="Shadows" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
+
+[node name="Exit Door" parent="." instance=ExtResource("5_5woty")]
+position = Vector2(-25, 209)
 
 [connection signal="body_entered" from="Dead Zone" to="Dead Zone" method="_on_body_entered"]
