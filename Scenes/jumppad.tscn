@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds127bulog7ho"]
+
+[ext_resource type="Script" path="res://Scenes/jumppad.gd" id="1_hgosh"]
+[ext_resource type="Texture2D" uid="uid://5ygfb1lpwma7" path="res://Tileset/JumpPad.png" id="1_yi5dg"]
+[ext_resource type="AudioStream" uid="uid://b7nfyw8pe877m" path="res://Assets/Mecha/JumpPad.mp3" id="3_j61kh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oncec"]
+size = Vector2(14, 11)
+
+[node name="Jump Pad" type="Area2D"]
+texture_filter = 1
+collision_mask = 7
+script = ExtResource("1_hgosh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_yi5dg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_oncec")
+
+[node name="Mecha Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_j61kh")
+volume_db = 10.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1499,15 +1499,12 @@ layer_0/tile_data = PackedInt32Array(655370, 983040, 5, 655371, 1048576, 5, 6553
 
 [node name="Exit Door" parent="." instance=ExtResource("7_ico46")]
 position = Vector2(832, 18)
-collision_mask = 7
 Nextlevel = ExtResource("4_p3e5l")
 
 [node name="Spawn Point" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(274, 136)
 gizmo_extents = 18.0
-
-[node name="Player" parent="." instance=ExtResource("2_bj6jl")]
 
 [node name="Traps" type="Node2D" parent="."]
 
@@ -1530,7 +1527,10 @@ position = Vector2(503, 8)
 position = Vector2(610, 3)
 rotation = 1.5708
 
+[node name="Player" parent="." instance=ExtResource("2_bj6jl")]
+
 [node name="Shadows" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [connection signal="body_entered" from="Dead Zone" to="Dead Zone" method="_on_body_entered"]

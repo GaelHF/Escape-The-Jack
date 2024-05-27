@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0l8w6gn1xl7u"]
+
+[ext_resource type="Script" path="res://Scenes/roof_spike.gd" id="1_1bvpt"]
+[ext_resource type="Texture2D" uid="uid://cimox2oob1td7" path="res://Tileset/RoofSpike.png" id="1_qktw5"]
+[ext_resource type="AudioStream" uid="uid://w8p47uf1evo0" path="res://Assets/Mecha/RoofSpikes.mp3" id="3_qjh04"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhwq5"]
+size = Vector2(14, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nywb8"]
+size = Vector2(14, 140)
+
+[node name="Roof Spikes" type="Node2D"]
+script = ExtResource("1_1bvpt")
+
+[node name="Sprite" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite"]
+texture_filter = 1
+texture = ExtResource("1_qktw5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite"]
+shape = SubResource("RectangleShape2D_lhwq5")
+
+[node name="Spike Zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike Zone"]
+position = Vector2(0, 64)
+shape = SubResource("RectangleShape2D_nywb8")
+
+[node name="Mecha Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qjh04")
+
+[connection signal="body_entered" from="Sprite" to="." method="_on_sprite_body_entered"]
+[connection signal="body_entered" from="Spike Zone" to="." method="_on_spike_zone_body_entered"]

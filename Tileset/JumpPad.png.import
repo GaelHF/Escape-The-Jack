@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4njxv0rl2ha2"
-path="res://.godot/imported/Door.png-bd1efde7a0fae1d22ab8d52c723c2800.ctex"
+uid="uid://5ygfb1lpwma7"
+path="res://.godot/imported/JumpPad.png-b54244cc41edade3d1f3447ff0ac7adc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Door.png"
-dest_files=["res://.godot/imported/Door.png-bd1efde7a0fae1d22ab8d52c723c2800.ctex"]
+source_file="res://Tileset/JumpPad.png"
+dest_files=["res://.godot/imported/JumpPad.png-b54244cc41edade3d1f3447ff0ac7adc.ctex"]
 
 [params]
 

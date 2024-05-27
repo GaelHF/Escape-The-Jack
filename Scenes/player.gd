@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -250.0
@@ -52,6 +53,9 @@ func _physics_process(delta):
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 	var isLeft = velocity.x < 0
 	rect.flip_h = isLeft
+
+func jumppad(force) -> void:
+	self.velocity.y = force
 
 func spawn() -> void:
 	var pos = Vector2(spawn_point.position)

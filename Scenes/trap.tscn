@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwgssm4curhpu"]
 
 [ext_resource type="Script" path="res://Scenes/trap.gd" id="1_av2no"]
-[ext_resource type="Texture2D" uid="uid://dth56eethtxxk" path="res://Assets/Spike.png" id="1_iiua1"]
+[ext_resource type="Texture2D" uid="uid://dth56eethtxxk" path="res://Tileset/Spike.png" id="1_iiua1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8sant"]
 size = Vector2(12, 4)
