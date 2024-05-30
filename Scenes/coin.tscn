@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlg2qqgc0umag"]
+
+[ext_resource type="Script" path="res://Scenes/coin.gd" id="1_eykgh"]
+[ext_resource type="Texture2D" uid="uid://cfj76tlfb6gil" path="res://Tileset/Coin.png" id="1_lgnmi"]
+[ext_resource type="AudioStream" uid="uid://cd28ima27sjit" path="res://Assets/Mecha/Coins.mp3" id="3_euxwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48l7j"]
+size = Vector2(10, 10)
+
+[node name="Coin" type="Area2D"]
+script = ExtResource("1_eykgh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lgnmi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_48l7j")
+
+[node name="Mecha Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_euxwl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

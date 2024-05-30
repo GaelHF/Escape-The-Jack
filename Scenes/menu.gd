@@ -4,6 +4,8 @@ extends Node
 @export var LevelScene : PackedScene
 @export var CreditScene : PackedScene	
 
+
+
 func _on_play_pressed():
 	SceneTransition.transite_from_packed_scene(LevelScene)
 

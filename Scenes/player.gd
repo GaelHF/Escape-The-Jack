@@ -40,6 +40,14 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Reload"):
 		die()
 	
+	#Main Menu
+	if Input.is_action_just_pressed("Menu"):
+		get_tree().change_scene_to_file("res://.godot/exported/133200997/export-53a0af8f00fbc899d4d541c34a803049-menu.scn")
+	
+	#Easter Egg
+	if Input.is_action_just_pressed("Easter Egg"):
+		SceneTransition.transite_from_file("res://Scenes/easteregg.tscn")
+	
 	var direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED

@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://kchkassulxjx"]
+
+[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_5iqi3"]
+[ext_resource type="Texture2D" uid="uid://bkm4jm2cs7p1b" path="res://Assets/menu_overlay.png" id="2_4txtr"]
+[ext_resource type="FontFile" uid="uid://df4nsqscanrb2" path="res://Assets/upheavtt.ttf" id="3_nmxat"]
+
+[node name="Easter Egg" type="Node"]
+script = ExtResource("1_5iqi3")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_4txtr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+offset_left = 473.0
+offset_top = 272.0
+offset_right = 1576.0
+offset_bottom = 961.0
+theme_override_fonts/normal_font = ExtResource("3_nmxat")
+theme_override_font_sizes/normal_font_size = 90
+text = "Vous avez trouvé un easter egg ! VOUS ÊTES TRÈS FORT, BRAVO !
+
+- @GaelHF"
+
+[node name="Back" type="Button" parent="."]
+offset_left = 743.0
+offset_top = 795.0
+offset_right = 1208.0
+offset_bottom = 893.0
+theme_override_fonts/font = ExtResource("3_nmxat")
+theme_override_font_sizes/font_size = 65
+text = "RETOUR"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
