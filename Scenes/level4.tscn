@@ -1487,7 +1487,7 @@ separation = Vector2i(1, 1)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xhgb2")
 
-[node name="Level 3" type="Node2D"]
+[node name="Level 4" type="Node2D"]
 
 [node name="Dead Zone" type="Area2D" parent="."]
 position = Vector2(0, 429)
