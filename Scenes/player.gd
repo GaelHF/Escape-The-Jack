@@ -9,11 +9,11 @@ const push_force = 80.0
 @onready var rect = $"Sprite Sheets"
 @onready var spawn_point = %"Spawn Point"
 
-
 #Sounds Nodes
 @onready var jumping_sound = $"Jumping Sound"
 @onready var death_sound = $"Death Sound"
-
+@onready var playing_song = true
+@onready var theme_song = %"Theme Song"
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -44,16 +44,12 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Menu"):
 		get_tree().change_scene_to_file("res://.godot/exported/133200997/export-53a0af8f00fbc899d4d541c34a803049-menu.scn")
 	
-	#Easter Egg
-	if Input.is_action_just_pressed("Easter Egg"):
-		SceneTransition.transite_from_file("res://Scenes/easteregg.tscn")
-	
 	var direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, 12)
-		
+	
 	move_and_slide()
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
@@ -61,6 +57,9 @@ func _physics_process(delta):
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 	var isLeft = velocity.x < 0
 	rect.flip_h = isLeft
+
+func egg() -> void:
+	SceneTransition.transite_from_file("res://Scenes/easteregg.tscn")
 
 func jumppad(force) -> void:
 	self.velocity.y = force

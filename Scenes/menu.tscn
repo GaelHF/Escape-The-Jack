@@ -2,13 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://bkm4jm2cs7p1b" path="res://Assets/menu_overlay.png" id="1_bafni"]
 [ext_resource type="Script" path="res://Scenes/menu.gd" id="1_fy5we"]
-[ext_resource type="PackedScene" uid="uid://28o36nqvqkh5" path="res://Scenes/level1.tscn" id="2_pepg6"]
+[ext_resource type="PackedScene" uid="uid://28o36nqvqkh5" path="res://Scenes/level1.tscn" id="2_k7pu2"]
 [ext_resource type="PackedScene" uid="uid://epp0chigdsdx" path="res://Scenes/credits.tscn" id="3_6r5xn"]
 [ext_resource type="FontFile" uid="uid://df4nsqscanrb2" path="res://Assets/upheavtt.ttf" id="5_ek0pf"]
 
 [node name="Menu" type="Node"]
 script = ExtResource("1_fy5we")
-LevelScene = ExtResource("2_pepg6")
+LevelScene = ExtResource("2_k7pu2")
 CreditScene = ExtResource("3_6r5xn")
 
 [node name="Background" type="TextureRect" parent="."]

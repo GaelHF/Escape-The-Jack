@@ -14,6 +14,7 @@ size = Vector2(14, 140)
 script = ExtResource("1_1bvpt")
 
 [node name="Sprite" type="Area2D" parent="."]
+collision_mask = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite"]
 texture_filter = 1
@@ -23,6 +24,7 @@ texture = ExtResource("1_qktw5")
 shape = SubResource("RectangleShape2D_lhwq5")
 
 [node name="Spike Zone" type="Area2D" parent="."]
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike Zone"]
 position = Vector2(0, 64)

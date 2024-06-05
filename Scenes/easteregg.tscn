@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://kchkassulxjx"]
+[gd_scene load_steps=5 format=3 uid="uid://kchkassulxjx"]
 
-[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_5iqi3"]
+[ext_resource type="Script" path="res://Scenes/easteregg.gd" id="1_sn0xf"]
 [ext_resource type="Texture2D" uid="uid://bkm4jm2cs7p1b" path="res://Assets/menu_overlay.png" id="2_4txtr"]
+[ext_resource type="PackedScene" uid="uid://dn6bhafhix0oq" path="res://Scenes/level5.tscn" id="2_f2bj3"]
 [ext_resource type="FontFile" uid="uid://df4nsqscanrb2" path="res://Assets/upheavtt.ttf" id="3_nmxat"]
 
 [node name="Easter Egg" type="Node"]
-script = ExtResource("1_5iqi3")
+script = ExtResource("1_sn0xf")
+level5 = ExtResource("2_f2bj3")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 40.0
